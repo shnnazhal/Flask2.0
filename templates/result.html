@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты - Решебник-Матриц</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="px-3 py-2 text-bg-dark border-bottom">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <span class="fs-4">Решебник-Матриц</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+        <h2 class="display-5">Решение</h2>
+        <p class="lead">Без хуй@ни</p>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto d-flex flex-column align-items-center justify-content-center"
+         style="width: 80%; height: 900px; border-radius: 21px 21px 0 0;">
+
+        <div class="w-75 text-white">
+            <h3 class="text-white">Результат:</h3>
+            {% if solution_type %}
+            <p class="fs-4">Тип решения: <strong>{{ solution_type }}</strong></p>
+            {% endif %}
+            {% if result %}
+            <p class="fs-4">X = {{ result[0] }}</p>
+            <p class="fs-4">Y = {{ result[1] }}</p>
+            {% if image_base64 %}
+            <img src="data:image/png;base64,{{ image_base64 }}" alt="График">
+            {% endif %}
+            {% elif error %}
+            <div class="d-flex align-items-center justify-content-center p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                     class="bi bi-emoji-surprise text-danger" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+                    <path d="M7 5.5C7 6.328 6.552 7 6 7s-1-.672-1-1.5S5.448 4 6 4s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 4 10 4s1 .672 1 1.5M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0"></path>
+                </svg>
+            </div>
+            <p class="fs-4 text-danger">{{ error }}</p>
+            {% else %}
+            <p class="fs-4">Данные должны быть в формате 1, 2, 3</p>
+            {% endif %}
+        </div>
+
+
+        <!-- Возвращение на главную страницу -->
+        <a href="/" class="btn btn-primary mt-3">Вернуться</a>
+    </div>
+</div>
+<footer class="py-3 my-4">
+    <p class="text-center text-body-secondary">© 2025 Company, Inc</p>
+</footer>
+</body>
+</html>
