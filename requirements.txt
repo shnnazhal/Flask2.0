@@ -1,0 +1,5 @@
+Flask==2.0.1
+Werkzeug==2.0.1  # Добавьте эту строку
+matplotlib==3.4.3
+numpy==1.21.2
+
